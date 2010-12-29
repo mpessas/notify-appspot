@@ -2,4 +2,4 @@
   <input type="text" name="term" />
   <input type="submit" value="Search" />
 </form>
-%rebase base
+%rebase base author=author, email=email

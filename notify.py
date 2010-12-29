@@ -2,6 +2,7 @@
 
 from bottle import Bottle, view
 from google.appengine.api import users
+from settings import AUTHOR, EMAIL
 
 myapp = Bottle()
 
@@ -9,7 +10,7 @@ myapp = Bottle()
 @myapp.route('/index.html')
 @view('index')
 def index():
-    return dict()
+    return dict(author=AUTHOR, email=EMAIL)
 
 @myapp.route('/login')
 def login():

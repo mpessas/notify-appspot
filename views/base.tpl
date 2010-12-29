@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <title>Instant notify me</title>
+  <title>FOSSCOMM 2011 in Patras</title>
   <meta charset="UTF-8">
 </html>
 <body>
   <header>
-    <h1>Instant notify me!</h1>
+    <hgroup>
+      <h1>FOSSCOMM 2011</h1>
+      <h2>Patras, Greece</h2>
+    </hgroup>
   </header>
   %include
   <footer>
-    &copy Apostolos Bessas <mpessas_at_gmail_dot_com>
+    &copy <a href="mailto:{{email}}">{{author}}</a>
   </footer>
 </body>
