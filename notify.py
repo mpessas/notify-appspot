@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from bottle import route, run, Bottle
+from bottle import Bottle, view
 from google.appengine.api import users
 
 myapp = Bottle()
 
 @myapp.route('/')
 @myapp.route('/index.html')
+@view('index')
 def index():
-    return "<a href='/login'>Log in</a>"
+    return dict()
 
 @myapp.route('/login')
 def login():
