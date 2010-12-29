@@ -6,8 +6,12 @@ from settings import AUTHOR, EMAIL
 
 myapp = Bottle()
 
-@myapp.route('/')
-@myapp.route('/index.html')
+@myapp.get('/')
 @view('index')
 def index():
     return dict(author=AUTHOR, email=EMAIL)
+
+@myapp.post('/')
+def subscribe():
+    name = myapp.request.forms.get('email')
+    return '{"res": "success"}'
