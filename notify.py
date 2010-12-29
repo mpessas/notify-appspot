@@ -11,11 +11,3 @@ myapp = Bottle()
 @view('index')
 def index():
     return dict(author=AUTHOR, email=EMAIL)
-
-@myapp.route('/login')
-def login():
-    user = users.get_current_user()
-    if user:
-        return "<p>Hi %s</p>" % user.nickname()
-    else:
-        return "<p>Hi, anonymous</p>"
