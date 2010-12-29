@@ -1,4 +1,4 @@
-<form action="/subscription" method="post" id="search_event">
+<form method="POST">
   <h2>Subscribe to notifications from FOSSCOMM 2011</h2>
   <p>
     Enter your Jabber ID to receive instant notifications during the
