@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from bottle import Bottle, view
+from bottle import Bottle, view, request
 from google.appengine.api import users
 from settings import AUTHOR, EMAIL
 
@@ -11,7 +11,8 @@ myapp = Bottle()
 def index():
     return dict(author=AUTHOR, email=EMAIL)
 
-@myapp.post('/')
+@myapp.post('/subscription')
+@view('subscribe')
 def subscribe():
-    name = myapp.request.forms.get('email')
-    return '{"res": "success"}'
+    name = request.forms.get('email')
+    return dict(author=AUTHOR, email=EMAIL, res='success')
