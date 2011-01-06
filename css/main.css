@@ -66,3 +66,7 @@ form {
     text-align: center;
     font-size: 1.2em;
 }
+
+ul {
+    margin-left: 1em;
+}
