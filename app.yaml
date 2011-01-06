@@ -3,6 +3,18 @@ version: 1
 runtime: python
 api_version: 1
 
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^README$
+
 handlers:
 - url: /css
   static_dir: css
@@ -10,12 +22,10 @@ handlers:
 - url: /list
   script: admin.py
   login: admin
-  secure: required
 
 - url: /post
   script: admin.py
   login: admin
-  secure: required
 
 - url: /.*
   script: main.py
