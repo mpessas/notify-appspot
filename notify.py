@@ -28,6 +28,12 @@ def subscribe():
     except xmpp.Error, e:
         return dict(author=AUTHOR, email=EMAIL, res=False)
 
+@myapp.get('/list')
+@view('list_jids')
+def list_jids():
+    jids = [person.jid.address for person in JIDPerson.all()]
+    return dict(author=AUTHOR, email=EMAIL, jids=jids)
+    
 def invite_user(jid):
     res = xmpp.send_invite(jid)
     return True
