@@ -10,6 +10,12 @@ handlers:
 - url: /list
   script: admin.py
   login: admin
+  secure: required
+
+- url: /post
+  script: admin.py
+  login: admin
+  secure: required
 
 - url: /.*
   script: main.py
