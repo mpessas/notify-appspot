@@ -33,7 +33,21 @@ def subscribe():
 def list_jids():
     jids = [person.jid.address for person in JIDPerson.all()]
     return dict(author=AUTHOR, email=EMAIL, jids=jids)
-    
+
+@myapp.get('/post')
+@view('post_message')
+def show_post_form():
+    return dict(author=AUTHOR, email=EMAIL, sent=False)
+
+@myapp.post('/post')
+@view('post_message')
+def post_msg():
+    jids = [person.jid.address for person in JIDPerson.all()]
+    msg = request.forms.get('msg')
+    for jid in jids:
+        xmpp.send_message(jid, msg)
+    return dict(author=AUTHOR, email=EMAIL, sent=True)
+
 def invite_user(jid):
     res = xmpp.send_invite(jid)
     return True
