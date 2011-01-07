@@ -53,5 +53,8 @@ def invite_user(jid):
     return True
 
 def save_jid(jid):
-    p = JIDPerson(jid=create_im(jid))
-    p.put()
+    query = JIDPerson.all()
+    query.filter('jid =', create_im(jid))
+    if not query.get():
+        p = JIDPerson(jid=create_im(jid))
+        p.put()
