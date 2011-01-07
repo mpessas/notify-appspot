@@ -5,9 +5,6 @@ from google.appengine.api import xmpp
 from settings import AUTHOR, EMAIL
 from jidperson import JIDPerson, create_im
 
-import bottle
-bottle.debug(True)
-
 myapp = Bottle()
 
 @myapp.get('/')
