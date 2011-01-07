@@ -20,11 +20,11 @@ handlers:
   static_dir: css
 
 - url: /list
-  script: notify.py
+  script: main.py
   login: admin
 
 - url: /post
-  script: notify.py
+  script: main.py
   login: admin
 
 - url: /.*
