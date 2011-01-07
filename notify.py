@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import logging
 from bottle import Bottle, view, request
 from google.appengine.api import xmpp
 from settings import AUTHOR, EMAIL
@@ -64,6 +65,7 @@ def post_msg():
     msg = request.forms.get('msg')
     for jid in jids:
         xmpp.send_message(jid, msg)
+    logging.info('Send msg: %s' % msg)
     return dict(author=AUTHOR, email=EMAIL, sent=True)
 
 def invite_user(jid):
@@ -77,4 +79,5 @@ def save_jid(jid):
     query.filter('jid =', create_im(jid))
     if not query.get():
         p = JIDPerson(jid=create_im(jid))
+        logging.info("Subscribe %s" % jid)
         p.put()
