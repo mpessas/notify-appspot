@@ -58,7 +58,23 @@ h2 {
 }
 
 p {
-    margin-bottom: 0.2em;
+    margin-bottom: 0.3em;
+}
+
+footer p {
+    display: inline;
+    border-left: 2px solid #444444;
+    padding: 0 20px;
+    letter-spacing: 1px;
+}
+
+footer p.last {
+    border-right: 2px solid #444444;
+}
+
+p.result {
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
 form {
@@ -67,6 +83,15 @@ form {
     font-size: 1.2em;
 }
 
+input {
+    padding: 5px;
+    margin: 2px;
+}
+
 ul {
-    margin-left: 1em;
+    margin-left: 2em;
+}
+
+li {
+    padding: 2px;
 }

@@ -20,7 +20,8 @@
     %include
   </div>
   <footer>
-    <p><a href="patras.fosscomm.gr">FOSSCOMM Patras</a></p>
     <p>&copy <a href="mailto:{{email}}">{{author}}</a></p>
+    <p><a href="http://patras.fosscomm.gr">FOSSCOMM Patras</a></p>
+    <p class="last"><a href="https://github.com/mpessas/notify-appspot">Code repository</a></p>
   </footer>
 </body>

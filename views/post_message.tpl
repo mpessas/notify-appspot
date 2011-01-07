@@ -1,5 +1,5 @@
 %if sent:
-<p>Message sent.</p>
+<p class="result">Message sent.</p>
 %end
 <h2>Post a message</h2>
 <form method="POST">
